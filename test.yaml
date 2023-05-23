@@ -1,0 +1,56 @@
+- name: Test OSPF
+  hosts: routers
+  gather_facts: no
+  connection: network_cli
+  tasks:
+    - name: ping r1
+      ios_command:
+        commands: "ping 10.0.0.2 repeat 3"
+      register: ping_output_r1
+      when: inventory_hostname == 'router1'
+
+    - name: ping r2
+      ios_command:
+        commands: "ping 10.0.0.1 repeat 3"
+      register: ping_output_r2
+      when: inventory_hostname == 'router2'
+
+    - name:  OSPF neighbor r1
+      ios_command:
+        commands:
+          - show ip ospf neighbor
+      register: ospf_neighbor_output_r1
+      when: inventory_hostname == 'router1'
+
+    - name: OSPF routing table r1
+      ios_command:
+        commands:
+          - show ip route 
+      register: ospf_route_output_r1
+      when: inventory_hostname == 'router1'
+
+    - name: OSPF neighbor r2
+      ios_command:
+        commands:
+          - show ip ospf neighbor
+      register: ospf_neighbor_output_r2
+      when: inventory_hostname == 'router2'
+
+    - name: OSPF routing table r2
+      ios_command:
+        commands:
+          - show ip route 
+      register: ospf_route_output_r2
+      when: inventory_hostname == 'router2'
+
+    - name: Debug output
+      debug:
+        var: item.stdout_lines
+      loop:
+        - "{{ ping_output_r1 }}"
+        - "{{ ping_output_r2 }}"
+        - "{{ ospf_neighbor_output_r1 }}"
+        - "{{ ospf_route_output_r1 }}"
+        - "{{ ospf_neighbor_output_r2 }}"
+        - "{{ ospf_route_output_r2 }}"
+
