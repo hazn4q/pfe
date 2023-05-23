@@ -1,0 +1,22 @@
+- hosts: routers
+  gather_facts: no
+  connection: network_cli
+  tasks:
+    - name: push config files to Router 1
+      ios_config:
+        src: ./snapshots/configs/R1.txt
+         
+      when: inventory_hostname == 'router1'
+
+    - name: push config files to Router 2
+      ios_config:
+        src: ./snapshots/configs/R2.txt
+      when: inventory_hostname == 'router2'
+
+    - name: save running configuration
+      ios_config:
+        save_when: modified
+
+
+
+    
