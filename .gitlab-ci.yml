@@ -1,1 +1,26 @@
+stages:     
+  - build
+  - test
+
+build-job:       
+  stage: build
+  tags:
+    - opi
+  script:
+    - echo "Compiling thkSessSDSDF coles..."
+    - pwd
+    - touch myfile.txt
+    - ls
+  artifacts:
+    paths:
+      - ./myfile.txt
+
+unit-test-job: 
+  tags:
+    - opi
+  stage: test    
+  script:
+    - echo "Running unit tests..."
+    - ls
+    - test -f myfile.txt
 
