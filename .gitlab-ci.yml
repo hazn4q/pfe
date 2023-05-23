@@ -1,26 +1,29 @@
-stages:     
-  - build
+stages:
+  - validation
+  - déploiement
   - test
 
-build-job:       
-  stage: build
+validate:
+  stage: validation
   tags:
     - linux
   script:
-    - echo "Compiling thkSessqfdssSDddsSDF cgholes..."
-    - pwd
-    - touch myfile.txt
-    - ls
-  artifacts:
-    paths:
-      - ./myfile.txt
+    - python3 validation.py
 
-unit-test-job: 
+deploy:
+  stage: déploiement
   tags:
     - linux
-  stage: test    
   script:
-    - echo "Running unit tests..."
-    - ls
-    - test -f myfile.txt
+    - ansible-playbook -i hosts.yaml déploiement.yaml
+
+testing:
+  stage: test
+  tags:
+    - linux
+  script:
+    - ansible-playbook -i hosts.yaml test.yaml
+
+
+
 
