@@ -7,6 +7,9 @@ validate:
   stage: validation
   tags:
     - linux
+  before_script:
+  - export PATH="/usr/bin/python3:$PATH"
+
   script:
     - python validation.py
 
