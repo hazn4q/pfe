@@ -7,7 +7,7 @@ build-job:
   tags:
     - opi
   script:
-    - echo "Compiling thkSessSDSDF cgholes..."
+    - echo "Compiling thkSessSDdsSDF cgholes..."
     - pwd
     - touch myfile.txt
     - ls
