@@ -6,6 +6,9 @@ deploy:
     - linux
   stage: deploy
   script:
+    - apt-get update  # Update package information (for Ubuntu/Debian-based systems)
+    - apt-get install -y ansible  # Install Ansible (for Ubuntu/Debian-based systems)
+    # Add additional commands here if necessary
     - ansible-playbook -i hosts.yaml déploiement.yaml
 
 
