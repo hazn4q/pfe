@@ -3,16 +3,18 @@ stages:
 
 image: ansible/ansible
 
-deploy:
+build:
+  stage: deploy
+  tags: linux
 
-before_script:
-- echo "Installing Ansible..."
-- sudo apt-get update
-- sudo apt-get install -y ansible
+  before_script:
+    - echo "Installing Ansible..."
+    - sudo apt-get update
+    - sudo apt-get install -y ansible
 
-script:
-- echo "Running Ansible playbook..."
-- ansible-playbook playbook.yml
+  script:
+    - echo "Running Ansible playbook..."
+    - ansible-playbook -i hosts.yaml déploiement.yaml
 
 
 
