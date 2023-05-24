@@ -8,9 +8,7 @@ before_script:
 deploy:
   stage: deploy
   script:
-    - ansible-playbook -i inventory.ini playbook.yml
-
-
+    - ansible-playbook -i hosts.yaml déploiement.yaml
 
 
 
