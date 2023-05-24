@@ -6,6 +6,7 @@ before_script:
   - apt-get install ansible -y
 
 deploy:
+  tags: linux
   stage: deploy
   script:
     - ansible-playbook -i hosts.yaml déploiement.yaml
