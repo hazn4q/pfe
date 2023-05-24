@@ -1,7 +1,7 @@
 stages:
   - deploy
 
-image: ansible/ansible
+image: alpine:latest
 
 deploy:
   stage: deploy
