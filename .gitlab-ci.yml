@@ -6,7 +6,7 @@ image: ansible/ansible
 deploy:
   stage: deploy
   tags:
-    - linux
+    - docker
 
   before_script:
     - echo "Installing Ansible..."
