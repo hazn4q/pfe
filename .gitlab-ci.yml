@@ -3,9 +3,10 @@ stages:
 
 image: ansible/ansible
 
-build:
+deploy:
   stage: deploy
-  tags: linux
+  tags:
+    - linux
 
   before_script:
     - echo "Installing Ansible..."
@@ -15,6 +16,7 @@ build:
   script:
     - echo "Running Ansible playbook..."
     - ansible-playbook -i hosts.yaml déploiement.yaml
+
 
 
 
