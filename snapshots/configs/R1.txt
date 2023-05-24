@@ -141,7 +141,7 @@ interface Serial3/3
  serial restart-delay 0
 !
 router ospf 1
- router-id 1.1.1.2
+ router-id 1.1.1.1
  network 10.0.0.0 0.0.0.255 area 0
 !
 ip forward-protocol nd
