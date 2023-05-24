@@ -1,12 +1,12 @@
 stages:
   - deploy
 
-image: alpine:latest
+image: ruby 2.7
 
 deploy:
   stage: deploy
   tags:
-    - docker
+    - push
 
   before_script:
     - echo "Installing Ansible..."
