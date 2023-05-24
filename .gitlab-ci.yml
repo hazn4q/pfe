@@ -1,15 +1,14 @@
 stages:
-  - validation
-  - déploiement
-  - test
+  - deploy
 
-validate:
-  stage: validation
-  tags:
-    - linux
+before_script:
+  - apt-get update -y
+  - apt-get install ansible -y
 
+deploy:
+  stage: deploy
   script:
-  - ssh cisco@172.100.100.2
+    - ansible-playbook -i inventory.ini playbook.yml
 
 
 
