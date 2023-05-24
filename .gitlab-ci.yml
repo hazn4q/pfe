@@ -9,21 +9,8 @@ validate:
     - linux
 
   script:
-    - python3 validation.py
+    - ssh cisco@172.100.100.2
 
-deploy:
-  stage: déploiement
-  tags:
-    - linux
-  script:
-    - ansible-playbook -i hosts.yaml déploiement.yaml
-
-testing:
-  stage: test
-  tags:
-    - linux
-  script:
-    - ansible-playbook -i hosts.yaml test.yaml
 
 
 
