@@ -1,6 +1,3 @@
-stages:
-  - deploy
-
 image: alpine:latest
 
 deploy:
@@ -10,12 +7,13 @@ deploy:
 
   before_script:
     - echo "Installing Ansible..."
-    - sudo apt-get update
-    - sudo apt-get install -y ansible
+    - apk update
+    - apk add ansible
 
   script:
     - echo "Running Ansible playbook..."
     - ansible-playbook -i hosts.yaml déploiement.yaml
+
 
 
 
