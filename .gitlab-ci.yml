@@ -4,7 +4,7 @@ stages:
 deploy:
   stage: deploy
   tags: 
-    - linux_runner
+    - linux_
   before_script:
 
     - apt-get update -qq
