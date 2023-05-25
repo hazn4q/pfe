@@ -1,28 +1,13 @@
-image: djerfy/gitlab-ci-ansible:latest
+image: ansible/ansible:default
 
 
 deploy:
   stage: deploy
   tags:
-    - ansible
+    - ansibledef
 
-  before_script:
-    - pip3 install paramiko
-    - brew install libssh
-    - pip3 install ansible-pylibssh
-
- 
-
- 
+  
 
   script:
     - echo "Running Ansible playbook..."
     - ansible-playbook -i hosts.yaml déploiement.yaml
-
-
-
-
-
-
-
-
