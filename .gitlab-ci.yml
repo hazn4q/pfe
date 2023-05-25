@@ -12,6 +12,7 @@ deploy:
   
 
   script:
+    - echo "hllo"
    
     - python3 validation.py
     
