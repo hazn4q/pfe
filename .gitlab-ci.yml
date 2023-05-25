@@ -8,7 +8,9 @@ deploy:
 
   before_script:
     - pip3 install paramiko
+    - brew install libssh
     - pip3 install ansible-pylibssh
+
  
 
  
