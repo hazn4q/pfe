@@ -7,8 +7,8 @@ deploy:
     - linux
   before_script:
 
-    - apt-get update -qq
-    - apt-get install -y ansible
+    - sudo apt-get update -qq
+    - sudo apt-get install -y ansible
     - pip install ansible-pylibssh
 
   script:
