@@ -1,4 +1,4 @@
-image: ansible/ansible:default
+image: ansible/ansible
 
 
 deploy:
