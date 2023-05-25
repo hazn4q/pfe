@@ -14,7 +14,7 @@ deploy:
 
   script:
    
-    - python3 validation.py
+    - python validation.py
     
 
 
