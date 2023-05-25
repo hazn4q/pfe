@@ -1,15 +1,16 @@
-image: djerfy/gitlab-ci-ansible 
-
+stages:
+  - deploy
 
 deploy:
   stage: deploy
-  tags:
-    - ubu
+  tags: linux_runner
   before_script:
 
-
-  
+    - apt-get update -qq
+    - apt-get install -y ansible
+    - pip install ansible-pylibssh
 
   script:
-    - echo "Running Ansible playbook..."
     - ansible-playbook -i hosts.yaml déploiement.yaml
+
+
