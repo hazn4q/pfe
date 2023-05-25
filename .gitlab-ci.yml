@@ -1,15 +1,19 @@
 stages:
   - deploy
 
+
 deploy:
   stage: deploy
+  image: python:3.11
   tags: 
     - linux
+  before_script:
+    - pip install pybatfish
   
 
   script:
    
-    - ansible-playbook -i hosts.yaml déploiement.yaml
+    - python3 validation.py
     
 
 
