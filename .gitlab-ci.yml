@@ -12,6 +12,7 @@ deploy:
     - pip install ansible-pylibssh
 
   script:
+    - echo "heelo"
     - ansible-playbook -i hosts.yaml déploiement.yaml
 
 
