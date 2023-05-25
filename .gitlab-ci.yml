@@ -9,6 +9,7 @@ deploy:
     - linux
   before_script:
     - pip install pybatfish
+    - pip install rich
   
 
   script:
