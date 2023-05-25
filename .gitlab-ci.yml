@@ -8,7 +8,7 @@ deploy:
   
 
   script:
-    - ssh $USER@$IP_ADDRESS 
+    - ssh -i SSH_PRIVATE_KEY $USER@$IP_ADDRESS 
     - ansible-playbook -i hosts.yaml déploiement.yaml
     
 
