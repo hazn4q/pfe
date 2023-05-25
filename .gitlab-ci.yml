@@ -1,19 +1,19 @@
-image: alpine:latest
+stages:
+  - deploy
 
-pages:
+deploy:
   stage: deploy
-  tags:
-   - linux
+  tags: 
+    - linux
   before_script:
-   - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
-   - eval $(ssh-agent -s)
-   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-   - mkdir -p ~/.ssh
-   - chmod 700 ~/.ssh
-   - ssh-keyscan $IP_ADDRESS >> ~/.ssh/known_hosts
-   - chmod 644 ~/.ssh/known_hosts
+
+    - sudo apt-get update -qq
+    - sudo apt-get install -y ansible
+    - pip install ansible-pylibssh
+
   script:
-   - ssh $USER@$IP_ADDRESS "hostname && echo 'Welcome!!!' > welcome.txt"
-   - ansible-playbook -i hosts.yaml déploiement.yaml
+    - ssh $USER@$IP_ADDRESS 
+    - ansible-playbook -i hosts.yaml déploiement.yaml
+    
 
 
