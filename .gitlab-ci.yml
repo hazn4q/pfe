@@ -6,6 +6,10 @@ deploy:
   tags:
     - ansible
 
+  before_script:
+    - sudo pip3 install paramiko
+ 
+
  
 
   script:
