@@ -1,10 +1,12 @@
-image: williamyeh/ansible:ubuntu18.04 
+image: djerfy/gitlab-ci-ansible 
 
 
 deploy:
   stage: deploy
   tags:
-    - sd
+    - ubu
+  before_script:
+
 
   
 
