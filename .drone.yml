@@ -5,8 +5,10 @@ type: docker
 
 
 
+
 steps:
 - name: greeting
+  image: python 
   commands:
   - echo "hello world"
   - ansible-playbook -i hosts.yaml déploiement.yaml
