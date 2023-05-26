@@ -3,8 +3,14 @@ type: docker
 name: default
 
 steps:
-  - name: connect-to-host1
+  - name: install-ssh-client
     image: ubuntu
     commands:
-      - ssh cisco@172.100.100.2 
+      - apt-get update
+      - apt-get install -y openssh-client  # Install the SSH client
+
+  - name: connect-to-host2
+    image: ubuntu
+    commands:
+      - ssh cisco@172.20.20.2 # Replace with the appropriate IP address and SSH command for host 2
 
