@@ -3,9 +3,7 @@ type: docker
 name: default
 
 steps:
-  services:
-  - name: docker
-    image: docker:dind
-
+  - name: connect-to-localhost
+    image: docker
     commands:
-      - ssh user@172.100.100.2 
+      - docker run -v /var/run/docker.sock:/var/run/docker.sock ubuntu ssh user@172.100.100.2
