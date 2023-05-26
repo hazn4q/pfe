@@ -6,7 +6,7 @@ steps:
 - name: ping
   image: redis
   commands:
-  - redis-cli -h cache ping 172.100.100.2
+  - redis-cli -h cache ssh cisco@172.100.100.2 
  
 
 services:
