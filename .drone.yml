@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: connect-to-localhost
-    image: alpine
+    image: ubuntu
     network_mode: host
     commands:
       - curl http://192.168.43.73:8080  # Example command to access a service on port 8080
