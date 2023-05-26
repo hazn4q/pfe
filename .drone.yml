@@ -1,5 +1,5 @@
 kind: pipeline
-type: exec
+type: docker
 name: default
 
 platform:
@@ -8,5 +8,6 @@ platform:
 
 steps:
 - name: greeting
+  image: ubuntu
   commands:
-  - echo "hello world"
+  - curl -X POST -H "Content-Type: application/json" -d '{ "command": "ls" }' https://localhost/
