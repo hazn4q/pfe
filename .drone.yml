@@ -1,12 +1,11 @@
-pipeline:
-  access_hosts:
+kind: pipeline
+type: docker
+name: access-hosts
+
+steps:
+  - name: modify-hosts
     image: alpine
     volumes:
       - /etc/hosts:/etc/hosts
     commands:
       - cat /etc/hosts
-
-
-t
-
-
