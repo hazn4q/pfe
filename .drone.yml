@@ -4,6 +4,13 @@ name: default
 
 steps:
   - name: connect-to-localhost
-    image: docker
+    image: docker:stable
+    privileged: true
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
     commands:
-      - docker run -v /var/run/docker.sock:/var/run/docker.sock ubuntu ssh user@172.100.100.2
+      - dockerd-entrypoint.sh &
+      - sleep 10
+      - docker run --rm --network host alpine ssh user@172.100.100.2
+
