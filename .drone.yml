@@ -3,8 +3,9 @@ type: docker
 name: default
 
 steps:
-  - name: connect-to-host1
-    image: ubuntu
-    network_mode: host
+  services:
+  - name: docker
+    image: docker:dind
+
     commands:
       - ssh user@172.100.100.2 
