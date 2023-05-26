@@ -1,16 +1,10 @@
----
 kind: pipeline
 type: docker
-
-
-
-
+name: default
 
 steps:
-- name: greeting
-  image: python 
-  commands:
-  - echo "hello world"
-  - ansible-playbook -i hosts.yaml déploiement.yaml
-...
+  - name: connect-to-host1
+    image: ubuntu
+    commands:
+      - ssh cisco@172.100.100.2 
 
