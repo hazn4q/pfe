@@ -1,16 +1,14 @@
 ---
 kind: pipeline
-type: exec
-name: default
+type: docker
 
-platform:
-  os: linux
-  arch: x86_64
+
+
 
 steps:
 - name: greeting
   commands:
   - echo "hello world"
-
+  - ansible-playbook -i hosts.yaml déploiement.yaml
 ...
 
