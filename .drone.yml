@@ -5,6 +5,8 @@ pipeline:
       - /etc/hosts:/etc/hosts
     commands:
       - cat /etc/hosts
+
+
 t
 
 
