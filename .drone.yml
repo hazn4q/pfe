@@ -1,11 +1,14 @@
 kind: pipeline
-type: kubernetes
+type: docker
 name: default
 
 steps:
 - name: ping
   image: redis
   commands:
-  - redis-cli -h 127.0.0.1 ping
+  - redis-cli -h cache ping
 
+services:
+- name: cache
+  image: redis
 
