@@ -1,10 +1,16 @@
+---
 kind: pipeline
-type: docker
+type: exec
+name: default
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
-  - name: build
-    image: alpine:latest
-    commands:
-      - echo "Building the project..."
-      # Add commands to build your project, run tests, etc.
+- name: greeting
+  commands:
+  - echo hello world
+
+...
 
