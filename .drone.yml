@@ -1,11 +1,12 @@
 kind: pipeline
-type: docker
-name: access-hosts
+type: exec
+name: default
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
-  - name: modify-hosts
-    image: alpine
-    volumes:
-      - /etc/hosts:/etc/hosts
-    commands:
-      - cat /etc/hosts
+- name: greeting
+  commands:
+  - echo hello world
