@@ -7,6 +7,7 @@ steps:
   image: redis
   commands:
   - redis-cli -h cache ping 127.0.0.1
+  - ping 172.100.100.2
 
 services:
 - name: cache
