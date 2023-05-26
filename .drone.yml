@@ -1,0 +1,10 @@
+kind: pipeline
+type: docker
+
+steps:
+  - name: build
+    image: alpine:latest
+    commands:
+      - echo "Building the project..."
+      # Add commands to build your project, run tests, etc.
+
