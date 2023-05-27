@@ -13,5 +13,4 @@ jobs:
 
       - name: Run Script
         run: |
-          # Execute your script commands here
-          python3 validation.py
+         echo $MY_FILE_PATH
