@@ -11,6 +11,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+<<<<<<< HEAD
       - name: Run Script 1
         run: ls
+=======
+<<<<<<< HEAD
+ 
+>>>>>>> b2a106215e3ec93a5c125321f86e890ce5e8a082
      
