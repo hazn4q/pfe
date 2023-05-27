@@ -1,17 +1,23 @@
-name: Self-hosted Runners Example
+name: Run Script on Local Machine
+on:
   push:
     branches:
       - main
 
 jobs:
-  run_scripts:
-    name: Execute Scripts
+  build:
     runs-on: self-hosted
-
     steps:
-      - name: Clone repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
+<<<<<<< HEAD
       - name: Run Script 1
         run: ls
      
+=======
+      - name: Run Script
+        run: |
+          # Execute your script commands here
+          python3 validation.py
+>>>>>>> 28aade9bbe34168ef0ebca2ec53c80762cfbfa1a
