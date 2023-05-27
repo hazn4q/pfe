@@ -2,7 +2,7 @@ name: Deploy to Localhost Devices
 on:
   push:
     branches:
-      - main  # Replace with the branch you want to trigger the workflow o
+      - main  
 
 jobs:
   deploy:
@@ -14,5 +14,6 @@ jobs:
 
       - name: Deploy Configuration
         run: |
+         ping 172.100.100.2
          ansible-playbook -i hosts.yaml déploiement.yaml
         
