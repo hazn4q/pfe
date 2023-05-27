@@ -1,4 +1,4 @@
-name: Run Script on Local Machine
+name: Run Script on Local Machinee
 on:
   push:
     branches:
