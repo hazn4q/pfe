@@ -1,4 +1,4 @@
-name: Self-hosted Runners Exampl
+name: Self-hosted Runners Example
 on:
   push:
     branches:
