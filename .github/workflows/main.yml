@@ -1,5 +1,4 @@
 name: Self-hosted Runners Example
-on:
   push:
     branches:
       - main
@@ -14,10 +13,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Script 1
-        run: ./validation.py
-
-      - name: Run Script 2
-        run: ./script2.sh
-
-      - name: Run Script 3
-        run: ./script3.sh
+        run: |
+           ls
+     
